@@ -1,19 +1,29 @@
-package org.example;
+package org.prog;
+
+import java.util.Arrays;
 
 public class Main {
+    private static Object boardingPassengers;
+
     public static void main(String[] args) {
-        Plane Plane1 = new Plane("BusinessClass", 3);
-        Plane Plane2 = new Plane("VacationClass", 4);
-        Plane1.fly("Shytomyr");
-        Plane2.fly("Goverla");
-        String[] passengers = new String[4];
-        passengers[0] = "Nik";
-        passengers[1] = "Kima";
-        passengers[2] = "Sara";
-        passengers[3] = "Bill";
-        Plane1.setPassengers(passengers);
-        for (int i = 0; i < passengers.length; i++){
-            System.out.println("Index of '" + passengers[i] + "' is " + i);}}}
+        FlightControl flightControl = new FlightControl();
+        Plane plane1 = new Plane("Plane-1");
+        Plane plane2 = new Plane("Plane-2");
 
+        plane1.setCurrentPassenger("passenger5");
+        System.out.println(plane1.getCurrentPassenger());
+        passenger Bob = new passenger();
+        passenger Nik = new passenger();
+        passenger Santa = new passenger();
+        passenger[] crossingPassengers = {Bob,Nik,Santa};
 
+        FlightControl.boardingPassengers(Bob,1);
+        FlightControl.boardingPassengers(Nik,2);
+        FlightControl.boardingPassengers(Santa,3);
+        
+        takeSeat(boardingPassengers);
+    }
+    private static void takeSeat(Object boardingPassengers) {
+    }
+}
 
